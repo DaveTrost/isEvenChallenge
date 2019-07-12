@@ -1,19 +1,26 @@
-import add from '../add.js';
+import isEven from '../is-even.js';
 const test = QUnit.test;
 
-test('add two integers', function(assert) {
+test('test an even number', function(assert) {
     //Arrange
-    // Set up your parameters and expectations
-    const x = 3;
-    const y = 4;
-    const expected = 7;
+    const x = 666;
+    const expected = true;
 
     //Act 
-    // Call the function you're testing and set the result to a const
-    const sum = add(x, y);
+    const result = isEven(x);
 
-    //Assert
-    // What should the result be? Use 'actual' vs. 'expected' order
-    assert.equal(sum, expected);
+    //Assert ('actual' vs. 'expected' order)
+    assert.equal(result, expected);
 });
 
+test('test an odd number', function(assert) {
+    //Arrange
+    const x = 9;
+    const expected = false;
+
+    //Act 
+    const result = isEven(x);
+
+    //Assert ('actual' vs. 'expected' order)
+    assert.equal(result, expected);
+});
